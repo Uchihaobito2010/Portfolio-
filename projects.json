@@ -1,0 +1,64 @@
+[
+  {
+    "name": "My Portfolio",
+    "desc": "I put all my info here — clean Obito-themed design with dynamic effects and skill animations.",
+    "link": "https://Aotpy.netlify.app",
+    "image": "obito.jpg"
+  },
+  {
+    "name": "Modiji Web Game",
+    "desc": "Just a fun flappy-style web game featuring Modiji (no hate, full respect). Built for fun using JavaScript and Canvas.",
+    "link": "https://flymodi.netlify.app",
+    "image": "modi.png"
+  },
+  {
+    "name": "Obito Apps",
+    "desc": "A dedicated page where I’ll upload all my apps and games in the future.",
+    "link": "https://Obitoapps.netlify.app",
+    "image": "obito.jpg"
+  },
+  {
+    "name": "Pass Reset Bot",
+    "desc": "A Telegram bot that resets Instagram and other domain passwords using fast API-based methods. Works flawlessly with hi2.in.",
+    "link": "https://t.me/PassResetRoBot",
+    "image": "p.jpg"
+  },
+  
+  {
+    "name": "Auto Approval Bot",
+    "desc": "A Telegram automation bot that auto-approves join requests for groups/channels. Fully customizable.",
+    "link": "https://t.me/AkazaApprovalBot",
+    "image": "a.jpg"
+  },
+  {
+    "name": "Chat ID Bot",
+    "desc": "Very advanced bot to get chat IDs for Telegram users and groups instantly.",
+    "link": "https://t.me/SeeChatidBot",
+    "image": "bot.jpg"
+  },
+  {
+    "name": "Marshal ↔ PYC Converter",
+    "desc": "A utility bot that converts between Marshal and PYC formats for Python files. Fast and easy inside Telegram.",
+    "link": "https://t.me/PytopycBot",
+    "image": "python.png"
+  },
+  {
+    "name": "Unfollow Bot",
+    "desc": "Bulk unfollower bot for Instagram with delay settings, filters, and full mobile API support.",
+    "link": "https://t.me/ObitoUnfollowBot",
+    "image": "i.jpg"
+  },
+  
+  {
+    "name": "Anime Streamer App (Coming Soon)",
+    "desc": "Android app version of my anime site — stream anime ad-free with Obito-themed UI and offline mode.",
+    "link": "https://",
+    "image": ""
+  },
+  {
+    "name": "Flying Modiji Game APK",
+    "desc": "Flying Modiji mobile game made just for fun — not hate. I personally like Modiji!",
+    "link": "https://www.mediafire.com/file/rdhwyx1r2227zaq/FLYING+MODI+Game.apk/file",
+    "image": "modi.png"
+  }
+] 

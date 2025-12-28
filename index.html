@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Obito domain</title>
+<style>
+:root {
+  --bg:#0a0a0a;
+  --muted:#bdaaaa;
+  --a1:#ff3131;
+  --a2:#ff4d4d;
+  --a3:#ff8080;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Poppins',sans-serif;
+  color:#f2eaea;
+  background:var(--bg);
+  overflow-x:hidden;
+}
+
+/* Splash */
+#splash{
+  position:fixed;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at center,#1a0000,#000 90%);
+  z-index:999;transition:opacity 1s ease;
+}
+#splash h1{
+  font-size:80px;font-weight:900;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+  -webkit-background-clip:text;color:transparent;
+  opacity:0;animation:fadeIn 2s ease forwards;
+  text-shadow:0 0 40px rgba(255,0,0,0.6);
+}
+.timer{font-size:22px;color:var(--muted);margin-top:20px;opacity:0;animation:fadeIn 2s .5s forwards;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Container */
+.container{
+  opacity:0;transition:opacity 1s ease;
+  padding:60px 20px;max-width:1100px;margin:auto;text-align:center;
+  background:linear-gradient(135deg,#0a0a0a,#1a0000,#000);
+  background-size:400% 400%;
+  animation:bgAnim 15s ease infinite;
+}
+@keyframes bgAnim{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* Logo */
+.logo{
+  width:160px;height:160px;margin:0 auto 40px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--a1),var(--a2));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 40px var(--a1),0 0 80px var(--a2);
+  animation:glowPulse 3s infinite ease-in-out;
+}
+.logo img{width:100%;height:100%;border-radius:50%;object-fit:cover;transition:transform .5s ease;}
+.logo:hover img{transform:scale(1.05);}
+@keyframes glowPulse{
+  0%,100%{box-shadow:0 0 30px var(--a2),0 0 60px var(--a1);}
+  50%{box-shadow:0 0 60px var(--a1),0 0 120px var(--a3);}
+}
+
+/* Typewriter */
+.typewriter{
+  font-size:70px;font-weight:900;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+  -webkit-background-clip:text;color:transparent;
+  overflow:hidden;white-space:nowrap;
+  border-right:4px solid var(--a2);
+  width:0ch;margin:0 auto;
+  animation:typing 3s steps(5,end) infinite alternate, blink .8s infinite, glowText 3s ease-in-out infinite;
+}
+@keyframes typing{0%{width:0ch;}50%{width:5ch;}100%{width:0ch;}}
+@keyframes blink{50%{border-color:transparent;}}
+@keyframes glowText{0%,100%{filter:drop-shadow(0 0 10px var(--a1));}50%{filter:drop-shadow(0 0 20px var(--a2));}}
+.dev-role{
+  font-size:28px;font-weight:700;margin-top:10px;
+  background:linear-gradient(90deg,var(--a1),var(--a2));
+  -webkit-background-clip:text;color:transparent;
+  text-shadow:0 0 10px rgba(255,60,60,0.6);
+}
+.sub-role{
+  font-size:14px;color:var(--muted);
+  letter-spacing:1px;margin-top:4px;
+}
+
+/* Info */
+.info{
+  display:block;text-align:left;
+  max-width:650px;margin:0 auto 60px;
+  padding:40px 50px;border-radius:20px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,0,0,0.15);
+  box-shadow:0 0 25px rgba(255,0,0,0.15);
+  line-height:1.9;
+}
+.info p{margin:6px 0;font-size:15px;color:var(--muted);}
+.info strong{color:#fff;letter-spacing:0.5px;}
+.infotitle{
+  text-align:center;font-size:28px;font-weight:900;margin-bottom:20px;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+  -webkit-background-clip:text;color:transparent;
+}
+
+/* Progress */
+.progress-section{
+  max-width:800px;
+  margin:0 auto 80px;
+  text-align:left;
+}
+.progress-section h3{
+  text-align:center;
+  font-size:30px;
+  font-weight:900;
+  margin-bottom:30px;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.skill-box{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,0,0,0.15);
+  box-shadow:0 0 30px rgba(255,0,0,0.25);
+  border-radius:20px;
+  padding:20px 25px;
+  margin:20px 0;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  transition:transform .3s;
+}
+.skill-box:hover{transform:scale(1.02);}
+.skill-box img{width:42px;height:42px;}
+.skill-content{flex:1;}
+.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.skill-header span{color:#fff;font-weight:600;font-size:16px;}
+.barwrap{
+  height:18px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:inset 0 0 15px rgba(255,0,0,0.2);
+}
+.bar{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--a1),var(--a2));
+  border-radius:10px;
+  box-shadow:0 0 20px var(--a1);
+  transition:width 0.8s ease-out;
+}
+
+/* Projects */
+.projects-section{
+  padding:60px 20px;
+  background:radial-gradient(circle at center,#120000 10%,#000 90%);
+  box-shadow:inset 0 0 60px rgba(255,0,0,0.3);
+  border-radius:25px;
+  margin-bottom:80px;
+}
+.projects-section h2{
+  text-align:center;font-size:36px;font-weight:900;margin-bottom:40px;
+  background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3));
+  -webkit-background-clip:text;color:transparent;
+}
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+  max-width:1000px;margin:auto;
+}
+.project{
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:18px;
+  padding:25px;
+  text-align:left;
+  box-shadow:0 0 30px rgba(255,0,0,0.2);
+  transition:all .3s ease;
+  opacity:0;
+  transform:translateY(40px);
+}
+.project.visible{opacity:1;transform:translateY(0);transition:all .6s ease;}
+.project-img img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:15px;}
+.project h3{color:#fff;font-size:20px;margin-bottom:8px;}
+.project p{color:#bbb;font-size:14px;margin-bottom:12px;}
+.project a{
+  display:inline-block;padding:10px 16px;
+  background:linear-gradient(90deg,var(--a1),var(--a2));
+  color:#000;text-decoration:none;font-weight:700;
+  border-radius:8px;transition:.3s;
+}
+.project a:hover{filter:brightness(1.2);}
+
+/* Contact */
+.contact-row{text-align:center;}
+.contact-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;margin:10px;padding:12px 22px;border-radius:12px;
+  text-decoration:none;background:linear-gradient(90deg,var(--a1),var(--a2));
+  color:black;font-weight:700;
+  box-shadow:0 0 25px rgba(255,60,60,0.4);transition:.3s;font-size:16px;
+}
+.contact-btn svg{width:22px;height:22px;fill:black;}
+.contact-btn:hover{transform:scale(1.08);filter:brightness(1.2);}
+footer{margin-top:60px;text-align:center;color:var(--muted);font-size:14px;}
+</style>
+</head>
+<body>
+
+<div id="splash">
+  <h1>Paras </h1>
+  <div class="timer" id="timer">5</div>
+</div>
+
+<div class="container" id="main">
+  <div class="logo"><img src="obito.jpg" alt="Obito Logo"></div>
+  <div class="title-block">
+    <div class="typewriter">Paras</div>
+    <div class="dev-role">Developer</div>
+    <div class="sub-role">Web / App</div>
+  </div>
+
+  <div class="info">
+    <h3 class="infotitle">Profile Info</h3>
+    <p><strong>Name:</strong> Paras Chourasiya</p>
+    <p><strong>Class:</strong> 10</p>
+    <p><strong>Hobby:</strong> Coding | Anime | Cooking | Guitar</p>
+    <p><strong>Type:</strong> Spiritual / Sadhak</p>
+    <p><strong>Kul Devta:</strong> Kaal Bhairav</p>
+    <p><strong>Favourite Anime:</strong> Attack on Titan / Mushoku Tensei / Naruto</p>
+    <p><strong>Favourite Character:</strong> Obito / Akaza / Eren</p>
+    <p><strong>Favourite Place:</strong> Japan</p>
+  </div>
+
+  <div class="progress-section" id="progressBox">
+    <h3>Progress</h3>
+  </div>
+</div>
+
+<section class="projects-section">
+  <h2> Projects</h2>
+  <div class="projects" id="allProjects">
+    <div style="color:#888;text-align:center;">Loading projects...</div>
+  </div>
+</section>
+
+<div class="contact-row">
+  <a href="https://t.me/Aotpy" target="_blank" class="contact-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.999 15.5 9.9 19c.4 0 .6-.2.9-.4l2.2-2 4.5 3.2c.8.5 1.4.2 1.6-.8l2.9-13.6c.3-1.3-.5-1.8-1.4-1.5L2.6 9.7c-1.3.5-1.3 1.2-.2 1.6l4.6 1.4 10.6-6.7c.5-.3 1-.1.6.3L9.999 15.5z"/></svg>
+    Telegram
+  </a>
+  <a href="https://instagram.com/Pa74s" target="_blank" class="contact-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm4.8-.7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+    Instagram
+  </a>
+</div>
+
+<footer>� 2025 Paras Chourasiya | my all work is for educational purpose only</footer>
+<!-- 🔱 Chakra-style background animation -->
+<canvas id="chakraCanvas"></canvas>
+<script>
+const cvs = document.getElementById("chakraCanvas");
+const ctx = cvs.getContext("2d");
+let W,H;function resize(){W=cvs.width=innerWidth;H=cvs.height=innerHeight;}
+addEventListener("resize",resize);resize();
+
+// one chakra energy particle
+class Chakra{
+  constructor(){
+    this.reset(true);
+  }
+  reset(init=false){
+    this.ringR = Math.random()*200+100; // radius of spiral
+    this.angle = Math.random()*Math.PI*2;
+    this.speed = (Math.random()*0.4+0.1)*(Math.random()<0.5?-1:1);
+    this.y = Math.random()*H;
+    this.alpha = Math.random()*0.6+0.4;
+    this.size = Math.random()*3+1.5;
+    if(!init)this.x=W/2+Math.cos(this.angle)*this.ringR;
+  }
+  update(){
+    this.angle += this.speed*0.01;
+    this.y -= 0.3;
+    if(this.y<-50)this.y=H+50;
+  }
+  draw(){
+    const x = W/2 + Math.cos(this.angle)*this.ringR;
+    const y = this.y + Math.sin(this.angle)*20;
+    const g = ctx.createRadialGradient(x,y,0,x,y,this.size*4);
+    g.addColorStop(0,`hsla(45,100%,70%,${this.alpha})`);
+    g.addColorStop(1,`hsla(45,100%,40%,0)`);
+    ctx.fillStyle=g;
+    ctx.beginPath();
+    ctx.arc(x,y,this.size*4,0,Math.PI*2);
+    ctx.fill();
+  }
+}
+
+const chakraArr=[];
+for(let i=0;i<50;i++)chakraArr.push(new Chakra());
+
+function animate(){
+  ctx.clearRect(0,0,W,H);
+  chakraArr.forEach(p=>{p.update();p.draw();});
+  requestAnimationFrame(animate);
+}
+animate();
+
+cvs.style.position="fixed";
+cvs.style.inset="0";
+cvs.style.zIndex="-1";
+cvs.style.pointerEvents="none";
+</script>
+<script>
+const skills = [
+  {name:"Python",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",percent:80},
+  {name:"HTML",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",percent:90},
+  {name:"CSS",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",percent:85},
+  {name:"JavaScript",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",percent:75},
+  {name:"C++",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",percent:70},
+  {name:"Java",logo:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",percent:65}
+];
+
+// === Create Skill Boxes ===
+const skillContainer = document.getElementById("progressBox");
+skills.forEach(s => {
+  const box = document.createElement("div");
+  box.className = "skill-box";
+  box.innerHTML = `
+    <img src="${s.logo}" alt="${s.name}">
+    <div class="skill-content">
+      <div class="skill-header">
+        <span>${s.name}</span><span class="percent-text">0%</span>
+      </div>
+      <div class="barwrap"><div class="bar" data-width="${s.percent}%"></div></div>
+    </div>`;
+  skillContainer.appendChild(box);
+});
+
+// === Animate Progress Bars ===
+function animateBars() {
+  document.querySelectorAll('.bar').forEach(bar => {
+    const target = bar.getAttribute('data-width');
+    const percentEl = bar.parentElement.previousElementSibling.querySelector('.percent-text');
+    bar.style.transition = "width 0.8s ease-out, box-shadow 0.3s";
+    bar.style.width = target;
+    percentEl.textContent = target;
+    setTimeout(() => {
+      bar.style.boxShadow = "0 0 25px 10px rgba(255,0,0,0.8)";
+      setTimeout(() => {
+        bar.style.boxShadow = "0 0 20px rgba(255,0,0,0.5)";
+      }, 600);
+    }, 800);
+  });
+}
+
+// === Trigger bars when visible ===
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateBars();
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+observer.observe(document.querySelector('#progressBox'));
+
+// === Load Projects ===
+async function loadProjects() {
+  const container = document.getElementById('allProjects');
+  try {
+    const res = await fetch("projects.json");
+    if (!res.ok) throw new Error("Projects file not found!");
+    const data = await res.json();
+    container.innerHTML = "";
+    data.forEach((p, i) => {
+      const card = document.createElement("div");
+      card.className = "project";
+      card.innerHTML = `
+        <div class="project-img"><img src="${p.image}" alt="${p.name}"></div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <a href="${p.link}" target="_blank">View Project</a>`;
+      container.appendChild(card);
+      setTimeout(() => card.classList.add('visible'), i * 200);
+    });
+  } catch (err) {
+    container.innerHTML = `<div style="color:#ff7b7b;text-align:center;"> Error loading projects.json</div>`;
+  }
+}
+
+// === Splash Screen Fixed Countdown ===
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+  const main = document.getElementById("main");
+  const timer = document.getElementById("timer");
+  let count = 5;
+
+  timer.textContent = count;
+
+  const countdown = setInterval(() => {
+    count--;
+    if (count >= 0) {
+      timer.textContent = count;
+    }
+    if (count < 0) {
+      clearInterval(countdown);
+      splash.style.transition = "opacity 1s ease";
+      splash.style.opacity = "0";
+      setTimeout(() => {
+        splash.style.display = "none";
+        main.style.transition = "opacity 1s ease";
+        main.style.opacity = "1";
+        loadProjects();
+      }, 1000);
+    }
+  }, 1000);
+});
+</script>
